@@ -1,10 +1,12 @@
-
-<x-app-layout>
+@extends('layouts.master')
+@section('content')
+{{-- <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +20,7 @@
   <script src="https://cdn.jsdelivr.net/
   npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
+<body> --}}
 
 <div class="container"><br>
   <h2>Note Update</h2>
@@ -47,6 +49,7 @@
   </form>
 </div>
 
-</body>
+{{-- </body>
 </html>
-</x-app-layout>
+</x-app-layout> --}}
+@endsection
