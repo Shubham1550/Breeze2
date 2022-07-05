@@ -10,7 +10,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
             <li class="breadcrumb-item active">Blog </li>
           </ol>
         </div>
@@ -78,7 +78,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="profile_image">Profile Image</label>
+            <label for="profile_image">Profile  Image</label>
             <input type="file" class="form-control" name="profile_image" id="upload_image" placeholder="Upload Profile Image"  value="{{$product->profile_image}}" value="{{old('profile_image')}}">
           </div>
 

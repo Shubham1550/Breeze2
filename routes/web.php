@@ -59,6 +59,7 @@ Route::get('form',[BlogController::class,'create'])->name('blog.create');
     Route::get('category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
 
 
+    // Route::view('about',[FrontController::class,'about'])->name('blog.about');
 
 });
 

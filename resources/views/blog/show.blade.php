@@ -15,14 +15,14 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="{{route('welcome')}}">Start Bootstrap</a>
+                <a class="navbar-brand" href="{{route('welcome')}}">Blog Application</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li> --}}
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('login')}}">Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -45,8 +45,16 @@
 
                         </header>
                         <!-- Preview image figure-->
-                        <figure class="mb-4"><img class="img-fluid rounded" width="800px" height="400px" src="{{asset('uploads/blogs/'.$blogs->profile_image)}}" alt="..." /></figure>
-                        
+                        <figure class="mb-4"><img class="img-fluid rounded" width="800px" height="350px" src="{{asset('uploads/blogs/'.$blogs->profile_image)}}" alt="..." /></figure>
+
+                            {{-- @if (empty($blog->profile_image))
+                            <figure class="mb-4"><img class="img-fluid rounded" width="800px" height="400px" src="{{asset('defaultblog.png')}}" alt="..." /></figure>
+
+                            @else
+                            <figure class="mb-4"><img class="img-fluid rounded" width="800px" height="4000px" src="{{asset('uploads/blogs/'.$blogs->profile_image)}}" alt="..." /></figure>
+
+\                            @endif --}}
+
                         <!-- Post content-->
                         <section class="mb-5">
                             <p class="fs-5 mb-4">{!!$blogs->description!!}</p>

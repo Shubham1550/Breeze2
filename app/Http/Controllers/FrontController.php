@@ -11,7 +11,7 @@ class FrontController extends Controller
 {
     public function index()
     {
-        $categories = Category::paginate(30);
+        $categories = Category::all();
         $blogs = Blog::latest()->paginate(4);
         $featured_blog =Blog::latest()->first();
         return view('welcome',compact('categories','blogs','featured_blog'));
@@ -25,4 +25,10 @@ class FrontController extends Controller
 
     return view('blog.show',compact('blogs','categories'));
 }
+
+    public function FunctionName()
+{
+    return view('about');
+}
+
 }

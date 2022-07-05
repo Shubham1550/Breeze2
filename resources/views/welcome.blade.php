@@ -15,13 +15,13 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="{{route('welcome')}}">Start Bootstrap</a>
+                <a class="navbar-brand" href="{{route('welcome')}}">Blog Application</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li> --}}
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{route('login')}}">Login</a></li>
                     </ul>
                 </div>
@@ -43,14 +43,14 @@
                 <div class="col-lg-8">
                     <!-- Featured blog post-->
                     <div class="card mb-4">
-                        <a href="#!">
+                        <a href="{{route('post.show',$featured_blog->id)}}">
                             <img class="card-img-top" width ="850px" height="350px" src="{{asset('uploads/blogs/'.$featured_blog->profile_image)}}" alt="..." />
                         </a>
                         <div class="card-body">
                             <div class="small text-muted">{{$featured_blog->created_at}}</div>
                             <h2 class="card-title">{{$featured_blog->title}}</h2>
                             <p class="card-text">
-                                {!! Str::words($featured_blog->description, 10, ' ...') !!}
+                                {!! Str::words($featured_blog->description, 5, ' ...') !!}
                                 {{-- {{$featured_blog->description}} --}}
                             </p>
                             <a class="btn btn-primary" href="{{route('post.show',$featured_blog->id)}}">Read more →</a>
@@ -63,7 +63,7 @@
                             <!-- Blog post-->
 
                             <div class="card mb-4">
-                                <a href="#!">
+                                <a href="{{route('post.show',$blog->id)}}">
                                     @if (empty($blog->profile_image))
                                     <img class="card-img-top" width ="500px" height="250px" src="{{asset('defaultblog.png')}}"  width="100px" height="100px"/>
 
@@ -76,7 +76,7 @@
                                     <div class="small text-muted">{{$blog->created_at}}</div>
                                     <h2 class="card-title h4">{{$blog->title}}</h2>
                                     <p class="card-text">
-                                        {!! Str::words($blog->description, 10, ' ...') !!}
+                                        {!! Str::words($blog->description, 5, ' ...') !!}
                                         {{-- {{$blog->description}} --}}
                                     </p>
                                     <a class="btn btn-primary" href="{{route('post.show',$blog->id)}}">Read more →</a>

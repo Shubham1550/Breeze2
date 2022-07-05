@@ -10,7 +10,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
                 <li class="breadcrumb-item active">Blogs </li>
             </ol>
             </div>
@@ -50,7 +50,7 @@
                         <th>Category</th>
 
                         <th>Status</th>
-                        <th>Profile Image</th>
+                        <th>Image</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -60,7 +60,7 @@
                         <td>{{$p->id}}</td>
                         <td>{{$p->title}}</td>
                         <td>
-                            {!! Str::words($p->description, 10, ' ...') !!}
+                            {!! Str::words($p->description, 5, ' ...') !!}
                             {{-- {!!$p->description!!} --}}
                         </td>
                         <td>{{@$p->category->name}}</td>
