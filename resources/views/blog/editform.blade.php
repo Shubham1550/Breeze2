@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-
+<script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
 
 <div class="content-header">
     <div class="container-fluid">
@@ -42,7 +42,7 @@
 
     <!-- /.card-header -->
     <!-- form start -->
-    <form action="{{route('update',$product->id)}}" method="POST">
+    <form action="{{route('update',$product->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
       <div class="card-body">
         <div class="form-group">
@@ -51,7 +51,7 @@
         </div>
         <div class="form-group">
           <label for="description">Description</label><br>
-          <textarea name="description" class="form-control" id="" cols="30" rows="5" placeholder="Write here!" value="{{$product->description}}">{{$product->description}}</textarea>
+          <textarea name="description" class="form-control" id="body" cols="30" rows="5" placeholder="Write here!" value="{{$product->description}}">{{$product->description}}</textarea>
         </div>
         <div class="form-group">
             <label for="title">Select Category</label>
@@ -79,7 +79,7 @@
           </div>
           <div class="form-group">
             <label for="profile_image">Profile Image</label>
-            <input type="file" class="form-control" name="profile_image" id="upload_image" placeholder="Upload Profile Image"  value="{{$product->profile_image}}"> 
+            <input type="file" class="form-control" name="profile_image" id="upload_image" placeholder="Upload Profile Image"  value="{{$product->profile_image}}" value="{{old('profile_image')}}">
           </div>
 
       </div>
@@ -94,5 +94,12 @@
       </div>
   </div>
 </div>
+<script>
+    ClassicEditor
+    .create( document.querySelector( '#body' ) )
+    .catch( error => {
+    console.error( error );
+    } );
+    </script>
 
   @endsection

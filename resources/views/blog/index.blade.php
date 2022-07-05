@@ -59,7 +59,10 @@
                       <tr>
                         <td>{{$p->id}}</td>
                         <td>{{$p->title}}</td>
-                        <td>{{$p->description}}</td>
+                        <td>
+                            {!! Str::words($p->description, 10, ' ...') !!}
+                            {{-- {!!$p->description!!} --}}
+                        </td>
                         <td>{{@$p->category->name}}</td>
                         <td>
                           @if($p->status == 1)

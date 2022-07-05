@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
+<script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
 
 <div class="content-header">
     <div class="container-fluid">
@@ -51,8 +52,8 @@
           <input type="text" class="form-control" name="title" id="title" placeholder="Enter title" value="{{old('title')}}" >
         </div>
         <div class="form-group">
-          <label for="description">Description</label><br>
-          <textarea name="description" class="form-control" id="" cols="30" rows="5" placeholder="Write here!">{{old('description')}}</textarea>
+          <label for="description"></label><br>
+          <textarea name="description" class="form-control" id="body" cols="30" rows="5" placeholder="Write here!">{{old('description')}}</textarea>
         </div>
         <div class="form-group">
             <label for="title">Select Category</label>
@@ -95,5 +96,12 @@
       <a href="{{route('blog.index')}}"><button type="submit" class="btn btn-primary">Back</button></a>
     </div>
   </div>
+  <script>
+    ClassicEditor
+    .create( document.querySelector( '#body' ) )
+    .catch( error => {
+    console.error( error );
+    } );
+    </script>
 
   @endsection

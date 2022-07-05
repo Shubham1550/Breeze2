@@ -15,7 +15,7 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="{{route('welcome')}}">Start Bootstrap</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -45,10 +45,11 @@
 
                         </header>
                         <!-- Preview image figure-->
-                        <figure class="mb-4"><img class="img-fluid rounded" width="900px" height="400px" src="{{asset('uploads/blogs/'.$blogs->profile_image)}}" alt="..." /></figure>
+                        <figure class="mb-4"><img class="img-fluid rounded" width="800px" height="400px" src="{{asset('uploads/blogs/'.$blogs->profile_image)}}" alt="..." /></figure>
+                        
                         <!-- Post content-->
                         <section class="mb-5">
-                            <p class="fs-5 mb-4">{{$blogs->description}}</p>
+                            <p class="fs-5 mb-4">{!!$blogs->description!!}</p>
                             {{-- <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.</p>
                             <p class="fs-5 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.</p> --}}
                             {{-- <h2 class="fw-bolder mb-4 mt-5">I have odd cosmic thoughts every day</h2>
@@ -116,16 +117,18 @@
                         <div class="card-header">Categories</div>
                         <div class="card-body">
                             <div class="row">
+                                @foreach ($categories as $cat)
                                 <div class="col-sm-6">
                                     <ul class="list-unstyled mb-0">
-                                        @foreach ($categories as $cat)
+
                                         <li><a href="#!">{{$cat->name}}</a></li>
 
-                                        @endforeach
+
                                         {{-- <li><a href="#!">HTML</a></li>
                                         <li><a href="#!">Freebies</a></li> --}}
                                     </ul>
                                 </div>
+                                @endforeach
                                 {{-- <div class="col-sm-6">
                                     <ul class="list-unstyled mb-0">
                                         <li><a href="#!">JavaScript</a></li>
