@@ -120,7 +120,13 @@
                         </div> --}}
                     </div>
                     <!-- Pagination-->
-                    {{$blogs->links()}}
+                    <nav aria-label="Pagination">
+                        <hr class="my-0" />
+                        <ul class="pagination justify-content-center my-4">
+                            {{$blogs->links()}}
+                        </ul>
+                    </nav>
+                    {{-- {{$blogs->links()}} --}}
                     {{-- <nav aria-label="Pagination">
                         <hr class="my-0" />
                         <ul class="pagination justify-content-center my-4">

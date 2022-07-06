@@ -79,7 +79,7 @@
           </div>
           <div class="form-group">
             <label for="profile_image">Profile  Image</label>
-            <input type="file" class="form-control" name="profile_image" id="upload_image" placeholder="Upload Profile Image"  value="{{$product->profile_image}}" value="{{old('profile_image')}}">
+            <input type="file" class="form-control" name="profile_image" id="upload_image" placeholder="Upload Profile Image"  value="{{$product->profile_image}}" value="{{ old($product->profile_image) ?? $product->profile_image}}">
           </div>
 
       </div>

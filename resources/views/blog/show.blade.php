@@ -45,15 +45,16 @@
 
                         </header>
                         <!-- Preview image figure-->
-                        <figure class="mb-4"><img class="img-fluid rounded" width="800px" height="350px" src="{{asset('uploads/blogs/'.$blogs->profile_image)}}" alt="..." /></figure>
+                        {{-- <figure class="mb-4"><img class="img-fluid rounded" width="800px" height="350px" src="{{asset('uploads/blogs/'.$blogs->profile_image)}}" alt="..." /></figure> --}}
 
-                            {{-- @if (empty($blog->profile_image))
+                            @if (empty($blogs->profile_image))
                             <figure class="mb-4"><img class="img-fluid rounded" width="800px" height="400px" src="{{asset('defaultblog.png')}}" alt="..." /></figure>
 
                             @else
-                            <figure class="mb-4"><img class="img-fluid rounded" width="800px" height="4000px" src="{{asset('uploads/blogs/'.$blogs->profile_image)}}" alt="..." /></figure>
+                            <figure class="mb-4"><img class="img-fluid rounded" src="{{asset('uploads/blogs/'.$blogs->profile_image)}}"  width="800px" height="400px"/>
+                            </figure>
 
-\                            @endif --}}
+                           @endif
 
                         <!-- Post content-->
                         <section class="mb-5">
